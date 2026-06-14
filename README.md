@@ -1,11 +1,4 @@
 <p align="center">
-  <a>
-    <picture>
-      <source srcset=".github/assets/logo-black.png" media="(prefers-color-scheme: dark)">
-      <source srcset=".github/assets/logo-white.png" media="(prefers-color-scheme: light)">
-      <img src=".github/assets/logo-white.png" alt="Sulfur">
-    </picture>
-  </a>
    <a>
     <picture>
       <img src=".github/assets/preview.png" alt="Sulfur-preview">
