@@ -1,5 +1,19 @@
-# Sulfur
+<p align="center">
+  <a>
+    <picture>
+      <source srcset=".github/assets/logo-black.png" media="(prefers-color-scheme: dark)">
+      <source srcset=".github/assets/logo-white.png" media="(prefers-color-scheme: light)">
+      <img src=".github/assets/logo-white.png" alt="Sulfur">
+    </picture>
+  </a>
+   <a>
+    <picture>
+      <img src=".github/assets/preview.png" alt="Sulfur-preview">
+    </picture>
+  </a>
+</p>
 
+<p align="center">Open source AI coding agent.</p>
 Inspired by [OpenCode](https://opencode.ai) and [Pi Agent](https://github.com/anomalyco/pi). I Built it to learn how local LLMs actually work: from llama.cpp subprocess management to streaming tool calls. Chat with an AI that can read, write, edit, and search files in your workspace, all running on your machine.
 
 ## Features
@@ -11,6 +25,7 @@ Inspired by [OpenCode](https://opencode.ai) and [Pi Agent](https://github.com/an
 - **Session Management**: Create, switch, rename, and delete chat sessions
 - **Workspace Attachments**: Attach files and folders for the AI to work with
 - **11 Color Themes**: Sulfur, Daylight, Void, Aqua, Cherry, Forest, Fire, Nebula, Slate, Amber, Emerald
+- **Hardware Tuning**: Exposed low-level controls — context size, thread count, GPU layers, KV cache quantization, flash attention, prompt caching, MLOCK, MoE CPU layers
 - **Frameless Window**: Custom title bar with drag, resize, and minimize
 - **PDF Parsing**: Ingest and analyze PDF documents
 
