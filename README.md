@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">Open source coding agent.</p>
-Inspired by [OpenCode](https://opencode.ai) and [Pi Agent](https://github.com/anomalyco/pi). I Built it to learn how local LLMs actually work: from llama.cpp subprocess management to streaming tool calls. Chat with an AI that can read, write, edit, and search files in your workspace, all running on your machine.
+Inspired by OpenCode and Pi Agent. I Built it to learn how local LLMs actually work: from llama.cpp subprocess management to streaming tool calls. Chat with an AI that can read, write, edit, and search files in your workspace, all running on your machine.
 
 ## Features
 
