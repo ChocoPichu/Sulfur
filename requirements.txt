@@ -1,0 +1,6 @@
+PyQt6==6.11.0
+PyQt6-Qt6==6.11.0
+PyQt6_sip==13.11.1
+requests==2.31.0
+psutil==7.2.2
+PyMuPDF==1.27.2.2
