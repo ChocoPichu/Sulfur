@@ -64,7 +64,3 @@ Use the [bug report template](.github/ISSUE_TEMPLATE/bug_report.md) when filing 
 - Steps to reproduce
 - Expected vs. actual behavior
 - Relevant logs from `llama_server.log` if applicable
-
-## Questions?
-
-Open a [discussion](https://github.com/YOUR_USERNAME/sulfur/discussions) or file an issue.
