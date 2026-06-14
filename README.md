@@ -1,31 +1,31 @@
 # Sulfur
 
-A local-first AI coding assistant desktop app that connects to locally-running LLMs. Chat with an AI that can read, write, edit, and search files in your workspace — all running entirely on your machine.
+Inspired by [OpenCode](https://opencode.ai) and [Pi Agent](https://github.com/anomalyco/pi). I Built it to learn how local LLMs actually work: from llama.cpp subprocess management to streaming tool calls. Chat with an AI that can read, write, edit, and search files in your workspace, all running on your machine.
 
 ## Features
 
-- **100% Local** — No cloud, no telemetry, no data leaves your machine
-- **Multi-Backend** — llama.cpp (bundled), LM Studio, or Ollama
-- **Tool Calling** — AI can read, write, edit, and search your files with permission controls
-- **Streaming Responses** — Real-time streaming chat with smooth rendering
-- **Session Management** — Create, switch, rename, and delete chat sessions
-- **Workspace Attachments** — Attach files and folders for the AI to work with
-- **11 Color Themes** — Sulfur, Daylight, Void, Aqua, Cherry, Forest, Fire, Nebula, Slate, Amber, Emerald
-- **Frameless Window** — Custom title bar with drag, resize, and minimize
-- **PDF Parsing** — Ingest and analyze PDF documents
+- **100% Local**: No cloud, no telemetry, no data leaves your machine
+- **Multi-Backend**: llama.cpp, LM Studio, or Ollama
+- **Tool Calling**: AI can read, write, edit, and search your files with permission controls
+- **Streaming Responses**: Real-time streaming chat with smooth rendering
+- **Session Management**: Create, switch, rename, and delete chat sessions
+- **Workspace Attachments**: Attach files and folders for the AI to work with
+- **11 Color Themes**: Sulfur, Daylight, Void, Aqua, Cherry, Forest, Fire, Nebula, Slate, Amber, Emerald
+- **Frameless Window**: Custom title bar with drag, resize, and minimize
+- **PDF Parsing**: Ingest and analyze PDF documents
 
 ## Prerequisites
 
-- **Windows** (the app ships Windows binaries)
+- **Windows**
 - **Python 3.11+** (3.12 recommended)
-- **NVIDIA GPU** with CUDA drivers (for GPU acceleration)
+- **llama.cpp backend**: NVIDIA GPU with CUDA drivers. **LM Studio / Ollama backends**: any GPU works, including non-NVIDIA
 - **GGUF model files** placed in the `models/` directory
 
 ## Quick Start
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/sulfur.git
+git clone https://github.com/chocopichu/sulfur.git
 cd sulfur
 
 # Create and activate a virtual environment
@@ -41,7 +41,20 @@ pip install -r requirements.txt
 python brain.py
 ```
 
-Or simply double-click `run_ui.bat`.
+Or simply double-click `run.bat`.
+
+### Setting up llama.cpp (optional)
+
+If you plan to use the built-in llama.cpp backend instead of LM Studio or Ollama:
+
+1. Download the latest `llama-server` binary from the [llama.cpp releases](https://github.com/ggerganov/llama.cpp/releases)
+2. Place the following in `bin/llama-cpp-cuda/`:
+   - `llama-server.exe`
+   - `llama.dll`, `ggml.dll`, `ggml-cuda.dll`
+   - CUDA runtime DLLs (`cublas*.dll`, `cudart*.dll`)
+3. The app will spawn `llama-server.exe` as a subprocess and communicate over its OpenAI-compatible API
+
+> **Note:** the `bin/` directory is gitignored. Binaries are not included in the repo.
 
 ## Configuration
 
@@ -60,11 +73,11 @@ All settings are stored in `preferences.json` and can be adjusted from the in-ap
 
 ```
 ├── brain.py              # Entry point
-├── run_ui.bat            # Windows launcher
+├── run.bat              # Windows launcher
 ├── requirements.txt      # Python dependencies
 ├── src/modules/          # Core logic (backends, inference, sessions, tools)
 ├── ui/                   # PyQt6 GUI (chat, sidebar, settings, title bar)
-├── bin/llama-cpp-cuda/   # Bundled llama.cpp binaries
+├── bin/llama-cpp-cuda/   # llama.cpp binaries (download separately, see below)
 ├── models/               # GGUF model files (gitignored)
 ├── instructions/         # System prompt templates
 └── sessions/             # Per-session chat history (gitignored)
