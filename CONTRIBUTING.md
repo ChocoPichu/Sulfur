@@ -22,7 +22,7 @@ Thanks for your interest in contributing! This document outlines the process for
 - Use descriptive variable and function names
 - Keep functions focused and reasonably sized
 - Use type hints where practical
-- Prefer existing patterns — look at neighboring files before introducing new conventions
+- Prefer existing patterns look at neighboring files before introducing new conventions
 
 ### Project Architecture
 
@@ -33,7 +33,7 @@ Thanks for your interest in contributing! This document outlines the process for
 | `src/modules/` | Config, preferences, sessions, file operations, document parsing |
 | `ui/` | All PyQt6 GUI components |
 
-- `brain.py` is the entry point — it creates the QApplication and main window
+- `brain.py` is the entry point it creates the QApplication and main window
 - `ui/app.py` (`App` class) orchestrates the UI and streaming pipeline
 - `src/modules/backend/__init__.py` acts as a backend factory
 - `src/modules/more_modules/chat_stream.py` handles the core streaming + tool-calling loop

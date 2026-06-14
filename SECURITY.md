@@ -2,9 +2,9 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in Sulfur, please report it privately instead of opening a public issue.
+If you discover a security vulnerability in Sulfur, please report it privately.
 
-Email: [INSERT YOUR EMAIL]
+Discord: chocopichu
 
 Please include:
 - A clear description of the issue
