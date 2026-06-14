@@ -59,7 +59,7 @@ def save_memory(
                 pass
 
         data = {
-            "messages": history[-20:],
+            "messages": history[-60:],
             "workspace_files": (
                 workspace_files if workspace_files else existing_files
             ),

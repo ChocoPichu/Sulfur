@@ -25,7 +25,6 @@ TOOLS_JSON_FILE = os.path.join(
 
 CUSTOM_FONT_PATH = [
     "ui/custom_fonts/Delius/Delius-Regular.ttf",
-    "ui/custom_fonts/Griffy/Griffy-Regular.ttf",
 ]
 
 _env_debug = (
