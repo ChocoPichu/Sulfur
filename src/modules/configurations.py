@@ -1,16 +1,21 @@
 import os
+import sys
 import src.modules.preferences_manager as prefs_mgr
 
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(
-    os.path.join(CURRENT_DIR, "..", "..")
-)
+if getattr(sys, "frozen", False):
+    BASE_DIR = os.path.dirname(sys.executable)
+    RESOURCE_DIR = sys._MEIPASS
+else:
+    BASE_DIR = os.path.abspath(
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
+    )
+    RESOURCE_DIR = BASE_DIR
 
 SESSIONS_DIR = os.path.join(BASE_DIR, "sessions")
 MEMORY_FILE = os.path.join(BASE_DIR, "memory.json")
-IDENTITY_FILE = os.path.join(BASE_DIR, "identity.md")
+IDENTITY_FILE = os.path.join(RESOURCE_DIR, "identity.md")
 
-INSTRUCTIONS_DIR = os.path.join(BASE_DIR, "instructions")
+INSTRUCTIONS_DIR = os.path.join(RESOURCE_DIR, "instructions")
 TOOLS_LEGACY_FILE = os.path.join(
     INSTRUCTIONS_DIR, "tools_legacy.md"
 )

@@ -46,7 +46,7 @@ class App(QMainWindow):
         super().__init__()
 
         for font_file in cfg.CUSTOM_FONT_PATH:
-            font_path = os.path.join(cfg.BASE_DIR, font_file)
+            font_path = os.path.join(cfg.RESOURCE_DIR, font_file)
             if os.path.exists(font_path):
                 QFontDatabase.addApplicationFont(font_path)
 
@@ -63,7 +63,7 @@ class App(QMainWindow):
         self._opacity_anim.setDuration(250)
 
         icon_path = os.path.join(
-            cfg.BASE_DIR, "ui/images/logo.png"
+            cfg.RESOURCE_DIR, "ui/images/logo.png"
         )
         if os.path.exists(icon_path):
             self.setWindowIcon(QIcon(icon_path))

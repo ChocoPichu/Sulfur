@@ -36,7 +36,7 @@ class TitleBar(QFrame):
         self.logo.setScaledContents(True)
 
         logo_path = os.path.join(
-            cfg.BASE_DIR, "ui/images/logo.png"
+            cfg.RESOURCE_DIR, "ui/images/logo.png"
         )
         if os.path.exists(logo_path):
             pix = QPixmap(logo_path)
@@ -91,7 +91,7 @@ class TitleBar(QFrame):
             }}
         """)
         settings_icon = os.path.join(
-            cfg.BASE_DIR, "ui/images/settings.png"
+            cfg.RESOURCE_DIR, "ui/images/settings.png"
         )
         if os.path.exists(settings_icon):
             app.settings_btn.setIcon(QIcon(settings_icon))

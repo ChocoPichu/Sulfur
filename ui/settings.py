@@ -899,8 +899,11 @@ def _build_general_tab(dialog):
         "Edit the instructions below and hit save.",
     )
 
-    identity_path = os.path.join(
-        cfg.INSTRUCTIONS_DIR, "identity.md"
+    _editable_identity = os.path.join(
+        cfg.BASE_DIR, "instructions", "identity.md"
+    )
+    _bundled_identity = os.path.join(
+        cfg.RESOURCE_DIR, "instructions", "identity.md"
     )
 
     dialog._identity_edit = QTextEdit()
@@ -920,9 +923,12 @@ def _build_general_tab(dialog):
     dialog._identity_edit.setMinimumHeight(140)
 
     try:
-        with open(
-            identity_path, 'r', encoding='utf-8'
-        ) as f:
+        path = (
+            _editable_identity
+            if os.path.exists(_editable_identity)
+            else _bundled_identity
+        )
+        with open(path, 'r', encoding='utf-8') as f:
             dialog._identity_edit.setPlainText(f.read())
     except Exception:
         dialog._identity_edit.setPlainText(
@@ -962,8 +968,9 @@ def _build_general_tab(dialog):
 
     def _save_identity():
         try:
+            os.makedirs(os.path.dirname(_editable_identity), exist_ok=True)
             with open(
-                identity_path, 'w', encoding='utf-8'
+                _editable_identity, 'w', encoding='utf-8'
             ) as f:
                 f.write(
                     dialog._identity_edit.toPlainText()

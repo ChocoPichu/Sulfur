@@ -1,8 +1,13 @@
 import os
+import sys
 import json
 
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(os.path.join(CURRENT_DIR, "..", ".."))
+if getattr(sys, "frozen", False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.abspath(
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
+    )
 PREFS_FILE = os.path.join(BASE_DIR, "preferences.json")
 
 DEFAULT_PREFS = {

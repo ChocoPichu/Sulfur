@@ -1,13 +1,16 @@
 import os
+import sys
 import json
 from dataclasses import dataclass, field
 from typing import Optional
 from pathlib import Path
 
-_current_dir = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(
-    os.path.join(_current_dir, "..", "..")
-)
+if getattr(sys, "frozen", False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.abspath(
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
+    )
 
 
 @dataclass
