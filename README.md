@@ -25,8 +25,7 @@ Inspired by [OpenCode](https://opencode.ai) and [Pi Agent](https://github.com/an
 - **Session Management**: Create, switch, rename, and delete chat sessions
 - **Workspace Attachments**: Attach files and folders for the AI to work with
 - **11 Color Themes**: Sulfur, Daylight, Void, Aqua, Cherry, Forest, Fire, Nebula, Slate, Amber, Emerald
-- **Hardware Tuning**: Exposed low-level controls — context size, thread count, GPU layers, KV cache quantization, flash attention, prompt caching, MLOCK, MoE CPU layers
-- **Frameless Window**: Custom title bar with drag, resize, and minimize
+- **Hardware Tuning**: Exposed low-level controls context size, thread count, GPU layers, KV cache quantization, flash attention, prompt caching, MLOCK, MoE CPU layers
 - **PDF Parsing**: Ingest and analyze PDF documents
 
 ## Prerequisites
